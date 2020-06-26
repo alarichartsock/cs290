@@ -1,0 +1,90 @@
+	Web Architecture
+
+The client is your browser and the server is some computer that has data the client wants. However, clients are not always browsers and servers can request data from each other.
+
+A "client side" interaction is one where things are changing on the client machine. 
+
+The server can be a multitude of different things. It's usually a computer in a data center, but you could host a website on your own machine and that could be considered a server. Additionally, you can use your own computers file system as a server. When things are server side they have access to all data on a server. 
+
+When a server makes a change the client usually has to refresh the page for it to be updated.
+
+	Web Languages
+
+HTML is used to implement raw, unstyled text
+CSS is used to style HTML	
+Javascript is used for client side interactivity 
+There are *many* server side languages
+
+	HTTP and TCP/IP
+
+HTTP stands for HyperText Transfer Protocol and TCP/IP stands for Transmission Control Protocol/ Internet Protocol.
+
+Some key components in HTTP is the request and response. A request is composed of a header and a body. 
+
+Example request 
+
+POST /about HTTP/1.1
+Host: main.oregonstate.edu
+Connection: keep-alive
+Content-Length: 128
+Cache-Control: max-age=0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Origin: http://main.oregonstate.edu
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.157 Safari/537.36
+Content-Type: application/x-www-form-urlencoded
+Referer: http://main.oregonstate.edu/about
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,en;q=0.8
+Cookie: mp_fe42a3507c097e9a9d1e9f881d833cfb_mixpanel=%7B%22distinct_id%22%3A%20%2214af9e5614bf2-08c9f53fa-63161675-1fa400-14af9e5614cb07%22%2C%22%24initial_referrer%22%3A%20%22%24direct%22%2C%22%24initial_referring_domain%22%3A%20%22%24direct%22%7D; __utma=26995683.1248642055.1411404198.1440290989.1440561171.61; __utmz=26995683.1440561171.61.45.utmcsr=infosu.oregonstate.edu|utmccn=(referral)|utmcmd=referral|utmcct=/; has_js=1; _ga=GA1.2.1248642055.1411404198
+
+The first line
+    This specifies the request type (often a GET or a POST), the resource being requested (in this case the /about page) and the version of HTTP being used.
+Host
+    This is who the client is sending the request to.
+Accept
+    This is the type of file the client is OK getting back from the server. They are listed in order of preference. So here it is saying it wants a text file containing HTML. If it can't have that application specific xhtml and xml is OK and so on. Until it hits */* which means any file will work. There are a TON on content types that can be listed here.
+Cookie
+    This is information, stored on the client that is sent to the server with every request. It can be used to keep track of which client is which when several clients are interacting with a server. It is important to know that browsers are sending this with pretty much every HTTP request.
+Referer
+    This is the page the client came from. It can be occasionally useful for things like analytics but it can be fooled so it is not good to rely on it for important tasks. Referer is the actual spelling in this context. 
+
+Example response
+
+HTTP/1.1 302 Found
+Server: Apache/2.2.15 (CentOS)
+X-Powered-By: PHP/5.4.45
+X-Drupal-Cache: MISS
+Cache-Control: no-cache, must-revalidate, post-check=0, pre-check=0
+Content-Language: en
+Location: http://main.oregonstate.edu/search/osu/foobar/0/3/
+Content-Type: text/html; charset=utf-8
+Content-Length: 18
+Accept-Ranges: bytes
+Date: Tue, 08 Sep 2015 23:58:05 GMT
+X-Varnish: 305863683
+Age: 0
+Via: 1.1 varnish
+Connection: close
+X-Varnish-Cache: MISS
+
+The First Line
+    The first line of the response has probably the most important piece of information. The HTTP status code. In this case 302 (which Drupal misuses so signify that a redirect happened). You can read about the various codes in the Wikipedia entry on HTTP status codes. Generally speaking values strictly less than 400 are OK and values of 400 or greater are a problem.
+Location
+    This is where you actually end up after the server does its thing. In this case the address that shows up in the address bar is not the same one the link pointed to when we did the search. The server generated a page and sent us there after we ran the search. This is basically the sign post that lets the browser know what to display in the address bar.
+Content-Type
+    This lets the browser know what kind of data was sent back. This is how the browser knows if it should try to parse HTML, just display plain text or render an image.
+Content-Length
+    This is how much data was sent back in the response body. At times this can be tremendously helpful with debugging. Sometimes weird bugs will crop up and it is because hidden characters that the browser can't display get sent back. You can use this to compare how much data you expected to get sent back with how much was actually sent back.
+
+	Git and version control
+
+Master: The main branch of the repository.
+Branch: A slightly different version of master.
+Commit: A snapshot of changes you've made to the source code
+Merge: The process of taking  a branch and applying the changes to the thing it branched off of.
+Clone: Making a copy of a repository. 
+Push: When you send your changes to the cloud
+Pull-Request: A request to add a feature to a repository.
+
+ 
