@@ -1,0 +1,37 @@
+	Javascript features
+
+Javascript is a dynamically typed language. That means that it doesn't check for errors within the code before it's run, it will fail at runtime if there is an error. This allows flexibility because objects can change their types.
+
+There are no explicit types within Javascript, Javacript only care about functionality.
+
+Javascript is also an interpreted language. This means that Javascript is read by the computer on the fly. 
+
+	Javascript types
+
+Primitive types:
+	Number
+	String
+	Boolean
+	Undefined
+	Null
+
+String is a constructor of a string object, string is a primitive type. A string can be declared with single quotes, double quotes, or backticks as long as they match. A \ within a string indicates a special character is going to follow.
+
+	Javascript functions
+
+Example function:
+
+function square(x) {
+	return x * x;
+}
+
+You can call functions before they are declared.
+
+You can also assign a function to a variable.
+
+var square = function(x) {
+	return x * x;
+};
+
+
+	

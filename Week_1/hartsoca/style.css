@@ -1,0 +1,22 @@
+table td:nth-of-type(odd) {
+    color: green;
+}
+table td:nth-of-type(even) {
+    color: red;
+}
+table tr th:nth-child(n+1):nth-child(-n+1){
+    font-style:italic;
+    font-weight: normal;
+}
+.outer-content {
+    background-color:pink;
+    width: 75%;
+    margin-top: 20px;
+}
+.inner-content {
+    background-color: lightblue;
+    width: 75%;
+    height: 25%;
+    margin: auto;
+    text-align: center;
+}

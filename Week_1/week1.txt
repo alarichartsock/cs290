@@ -87,4 +87,34 @@ Clone: Making a copy of a repository.
 Push: When you send your changes to the cloud
 Pull-Request: A request to add a feature to a repository.
 
- 
+	HTML and CSS
+	
+	Common HTML tags
+
+Headers (h1-h6)
+Div <div></div> is used to divide content. 
+Section <section></section> is used to make a thematic grouping of content. Only use when the content is related
+The anchor <a href="link">A link to foo</a> links between pages
+The image tag <img src="link" alt="A cute foo"> The src attribute indicates where the image is located, which can either be a web link or a relative path within the file structure
+Strong, b em, i.. : This family of elements is for adding meaning or style to text within a paragraph. This is different from the previous elements which generally served to group text
+	Strong <strong></strong> marks text that is more important
+	b <b></b> makes text look different from different texts. It could be used to highlight keywords
+	Em Emphasizes a word, often making it italic.
+Lists and tables: 
+	Unordered list: <ul></ul>
+	Ordered list: <ol></ol>
+	Use <li></li> as list items within these to populate
+	<dl></dl> is a definitions list
+	Use tables by starting with <table></table> and adding <tr></tr> inside. Add <th></th> inside of tr to complete with headers, or <td></td> for regular data
+	
+	HTML forms
+
+Forms can be made using the <form></form> tag. The action attributes where the form will be sent while the method attribute specifies how it will be sent. 
+
+The get request sends the key value pairs as part of the url. 
+
+http://stackoverflow.com/search?q=url+encode&s=c73b9c0b-7565-454e-8a7e-45f4877fc0cb
+
+Lets break this down piece by piece http: is the protocol. It tells us this is using Hyper Text Transfer Protocol. Often times you will see https: which is the secure version of the protocol. Next is //stackoverflow.com. This is the address of the server we are trying to contact. After that will come the path to the resource we are requesting. In this case we are only one directory deep in /search and the server is able to interpret that as a resource. Other times you will see a directory chain ending in a file like /foo/bar/kitten.jpeg. Now what comes next is how we can tell this is probably a GET request. The ? indicates that it is the start of a query string. In that query string there is going to be a specific format for key value pairs. That format is key1=value1&key2=value2&keyn=valuen. So keys are assigned values using = and key value pairs are separated using & symbols. So in this instance the q key has the value url+encode and the s key has the value c73b.... In this case "q" probably stands for query and "s" for session but there is no real convention here.
+
+The post request sends the same things but instead as part of the request body. Tht means that you canot tell what data was sent to a server via a post request by just looking at the URL. it will arrive at the server as part of a query string in the same format as a get query string.
