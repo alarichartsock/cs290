@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="zip">Zip:</label><br>
+        <input type="text" id="zip" name="zip"><br>
+        <label for="city">City:</label><br>
+        <input type="text" id="city" name="city"><br>
+        <label for="state">State Code ("us" if in United States):</label><br>
+        <input type="text" id="state" name="country"><br>
+        <button type="button" value="Get weather from zip" onclick="getWeatherFromZip(document.getElementById('zip').value,document.getElementById('state').value)">Get weather from zip</button><br>
+        <button type="button" value="Get weather from city" onclick="getWeatherFromCity(document.getElementById('city').value,document.getElementById('state').value)">Get weather from city</button><br>
+    </form>
+    <form>
+        <button type="button" value="Post garbage to httpbin" onclick="postGarbage()">Post garbage to httpbin</button><br>
+    </form>
+    <script src="./script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+Everything within the DOM is arranged within a tree. We have a couple of methods that allow us to traverse it.
+
+firstElementChild
+    This is the first child node which is also an element node. This will ignore text nodes which can be really handy as you often want to ignore those node.
+lastElementChild
+    Just like firstElementChild but is the last child node which is also an element node.
+nextElementSibling
+    This contains the the next node which is both an element and a child of the same parent as the current node.
+previousElementSibling
+    This contains the the previous node which is both an element and a child of the same parent as the current node.
+children
+    This contains all the children which are element nodes. 
+
+There are easier ways to traverse. We can use getElementById, which returns one element with a unique ID. never use the same id more than once.
+
+Another one is getElementsByTagName. This returns an array-like collection of nodes with a particular tag name.  It accepts a single string argument that is the tag name you are looking for. For example document.body.getElementsByTagName("div"); will return a collection of all the divs in the body of the document. All element type nodes have this getElementsByTagName method which will return all children of that node which match the specified type.
+
+lastly there is getElementsByClassName. The getElementsByClassName method. It is very similar to getElementsByTagName except it selects all elements which have the provided class name. Again this is called from an element node. So if you want to find everything in the page that has a "warning" class you would call it from document.body. So it would look like document.body.getElementsByClassName("warning");.
+
+

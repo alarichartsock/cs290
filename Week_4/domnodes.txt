@@ -1,0 +1,12 @@
+textContent
+
+Probably the most basic property of a node is its textContent. This contains all the content of a node in a string representation. Setting a node's textContent to "" will clear out all of its text and child nodes. So you need to be careful when setting this value as it is easy to accidentally delete a lot of your pages content when all you wanted to do was add some text.
+style
+
+style
+
+Another important piece of a node is its style attribute. This lets you change the style of a node. This is something you are going to be doing a lot with JavaScript in order to make a page visually interactive. The style attribute is a JavaScript object. The property names of that object correspond to style names. The values those properties hold are the values of the property. So myNode.style.color = "red"; will style myNode to have red text. Some property names like background-color have a dash. In JavaScript these are converted to camel case names so the dash is removed and the letter after the dash is capitalized. So it would be like myNode.style.backgroundColor = "violet"; to set myNode's background to violet.
+
+className
+
+Another common property you will need to access is an elements class name. It is stored in the className property of an element. When specifying class names on an element you can insert spaces to give it multiple classes. So when you are accessing it via JavaScript you need to keep this in mind. You can append an additional class to an element using += " newClass". Note the space. Without the space it would look like "oldClassnewClass".
